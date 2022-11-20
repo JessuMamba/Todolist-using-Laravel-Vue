@@ -1,0 +1,31 @@
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPhone, faUser, faFlag } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faPhone, faUser, faFlag);
+
+export default FontAwesomeIcon;
+
+VueElement.component('font-awesome-icon', FontAwesomeIcon)
+
+
+---
+
+require('./bootstrap')
+
+import { createApp, VueElement } from 'vue'
+import Welcome from './vue/app'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlusSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faPlusSquare, faTrash)
+
+VueElement.component('font-awesome-icon', FontAwesomeIcon)
+
+const app = createApp({})
+
+app.component('welcome', Welcome)
+
+app.mount('#app')
